@@ -23,8 +23,8 @@ import com.youth.banner.config.IndicatorConfig;
 import com.youth.banner.indicator.CircleIndicator;
 import com.youth.banner.util.BannerUtils;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
+// import butterknife.BindView;
+// import butterknife.ButterKnife;
 
 public class BlankFragment extends Fragment {
 

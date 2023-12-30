@@ -16,44 +16,45 @@ import com.youth.banner.Banner;
 import com.youth.banner.indicator.RectangleIndicator;
 import com.youth.banner.util.BannerUtils;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
+// import butterknife.BindView;
+// import butterknife.ButterKnife;
 
 public class BannerFragment extends Fragment {
 
-    @BindView(R.id.banner)
-    Banner banner;
+	// @BindView(R.id.banner)
+	private Banner banner;
 
-    public static Fragment newInstance() {
-        return new BannerFragment();
-    }
+	public static Fragment newInstance() {
+		return new BannerFragment();
+	}
 
-    @Nullable
-    @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.banner, container, false);
-        ButterKnife.bind(this, view);
-        return view;
-    }
+	@Nullable
+	@Override
+	public View onCreateView(@NonNull LayoutInflater inflater,@Nullable ViewGroup container,@Nullable Bundle savedInstanceState) {
+		View view = inflater.inflate(R.layout.banner,container,false);
+		// ButterKnife.bind(this, view);
+		banner = view.findViewById(R.id.banner);
+		return view;
+	}
 
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        banner.setAdapter(new ImageNetAdapter(DataBean.getTestData3()));
-        banner.setIndicator(new RectangleIndicator(getActivity()));
-        banner.setIndicatorSpace((int) BannerUtils.dp2px(4));
-        banner.setIndicatorRadius(0);
-    }
+	@Override
+	public void onViewCreated(@NonNull View view,@Nullable Bundle savedInstanceState) {
+		super.onViewCreated(view,savedInstanceState);
+		banner.setAdapter(new ImageNetAdapter(DataBean.getTestData3()));
+		banner.setIndicator(new RectangleIndicator(getActivity()));
+		banner.setIndicatorSpace((int) BannerUtils.dp2px(4));
+		banner.setIndicatorRadius(0);
+	}
 
-    @Override
-    public void onStart() {
-        super.onStart();
-        banner.start();
-    }
+	@Override
+	public void onStart() {
+		super.onStart();
+		banner.start();
+	}
 
-    @Override
-    public void onStop() {
-        super.onStop();
-        banner.stop();
-    }
+	@Override
+	public void onStop() {
+		super.onStop();
+		banner.stop();
+	}
 }

@@ -11,8 +11,6 @@ android {
         minSdkVersion 21
         //noinspection ExpiredTargetSdkVersion
         targetSdkVersion 29
-        versionCode 202002
-        versionName version
         consumerProguardFiles 'proguard-rules.pro'
     }
 
@@ -24,10 +22,17 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    buildFeatures {
+        dataBinding true
+        viewBinding true
+        buildConfig true
+    }
+
+    namespace 'com.youth.banner'
 }
 
 dependencies {
-    implementation "androidx.viewpager2:viewpager2:1.1.0-alpha01"
+    implementation "androidx.viewpager2:viewpager2:1.1.0-beta02"
 }
 
 task androidSourcesJar(type: Jar) {

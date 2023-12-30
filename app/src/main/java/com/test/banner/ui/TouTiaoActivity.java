@@ -1,8 +1,8 @@
 package com.test.banner.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
-import butterknife.BindView;
-import butterknife.ButterKnife;
+// import butterknife.BindView;
+// import butterknife.ButterKnife;
 
 import android.os.Bundle;
 
@@ -15,14 +15,15 @@ import com.youth.banner.transformer.ZoomOutPageTransformer;
 import com.youth.banner.util.LogUtils;
 
 public class TouTiaoActivity extends AppCompatActivity {
-    @BindView(R.id.banner)
+    // @BindView(R.id.banner)
     Banner banner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tou_tiao);
-        ButterKnife.bind(this);
+        // ButterKnife.bind(this);
+        banner = findViewById(R.id.banner);
 
         //实现1号店和淘宝头条类似的效果
         banner.setAdapter(new TopLineAdapter(DataBean.getTestData2()))
